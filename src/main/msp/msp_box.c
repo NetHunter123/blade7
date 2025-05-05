@@ -51,6 +51,7 @@ static const box_t boxes[CHECKBOX_ITEM_COUNT] = {
     { .boxId = BOXANGLE, .boxName = "ANGLE", .permanentId = 1 },
     { .boxId = BOXHORIZON, .boxName = "HORIZON", .permanentId = 2 },
 //    { .boxId = BOXBARO, .boxName = "BARO", .permanentId = 3 },
+{ .boxId = BOXALTHOLD, .boxName = "ALT HOLD",   .permanentId = 3 },  // ALTITUDE HOLD
     { .boxId = BOXANTIGRAVITY, .boxName = "ANTI GRAVITY", .permanentId = 4 },
     { .boxId = BOXMAG, .boxName = "MAG", .permanentId = 5 },
     { .boxId = BOXHEADFREE, .boxName = "HEADFREE", .permanentId = 6 },
@@ -59,6 +60,7 @@ static const box_t boxes[CHECKBOX_ITEM_COUNT] = {
 //    { .boxId = BOXCAMTRIG, .boxName = "CAMTRIG", .permanentId = 9 },
 //    { .boxId = BOXGPSHOME, .boxName = "GPS HOME", .permanentId = 10 },
 //    { .boxId = BOXGPSHOLD, .boxName = "GPS HOLD", .permanentId = 11 },
+{ .boxId = BOXPOSHOLD, .boxName = "POS HOLD",   .permanentId = 11 }, // POSITION HOLD
     { .boxId = BOXPASSTHRU, .boxName = "PASSTHRU", .permanentId = 12 },
     { .boxId = BOXBEEPERON, .boxName = "BEEPER", .permanentId = 13 },
 //    { .boxId = BOXLEDMAX, .boxName = "LEDMAX", .permanentId = 14 }, (removed)

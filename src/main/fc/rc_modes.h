@@ -33,6 +33,8 @@ typedef enum {
     BOXANGLE,
     BOXHORIZON,
     BOXMAG,
+    BOXALTHOLD,  // додано для ALT_HOLD
+    BOXPOSHOLD,  // додано для POS_HOLD
     BOXHEADFREE,
     BOXPASSTHRU,
     BOXFAILSAFE,
