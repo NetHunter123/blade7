@@ -228,11 +228,19 @@ void initActiveBoxIds(void)
     }
 #endif
 
-#ifdef USE_BARO //Кастомний режим
-    if (sensors(SENSOR_BARO)) {
-        BME(BOXALTHOLD);
-    }
+    // #ifdef USE_BARO //Кастомний режим
+    //     if (sensors(SENSOR_BARO)) {
+    //         BME(BOXALTHOLD);
+    //     }
+    // #endif
+
+#ifdef USE_ALTITUDE_HOLD
+    BME(BOXALTHOLD);
 #endif
+#ifdef USE_POSITION_HOLD
+    BME(BOXPOSHOLD);
+#endif
+
 
 #ifdef USE_GPS
     if (featureIsEnabled(FEATURE_GPS)) {
@@ -241,7 +249,7 @@ void initActiveBoxIds(void)
             BME(BOXGPSRESCUE);
         }
 #endif
-        BME(BOXPOSHOLD);//Кастомний режим
+        // BME(BOXPOSHOLD);//Кастомний режим
         BME(BOXBEEPGPSCOUNT);
     }
 #endif
