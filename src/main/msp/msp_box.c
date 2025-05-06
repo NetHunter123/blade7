@@ -45,85 +45,85 @@
 #include "msp_box.h"
 
 
-// permanent IDs must uniquely identify BOX meaning, DO NOT REUSE THEM!
+ // permanent IDs must uniquely identify BOX meaning, DO NOT REUSE THEM!
 static const box_t boxes[CHECKBOX_ITEM_COUNT] = {
-    { .boxId = BOXARM, .boxName = "ARM", .permanentId = 0 },
-    { .boxId = BOXANGLE, .boxName = "ANGLE", .permanentId = 1 },
-    { .boxId = BOXHORIZON, .boxName = "HORIZON", .permanentId = 2 },
-//    { .boxId = BOXBARO, .boxName = "BARO", .permanentId = 3 },
-{ .boxId = BOXALTHOLD, .boxName = "ALT HOLD",   .permanentId = 3 },  // ALTITUDE HOLD
-    { .boxId = BOXANTIGRAVITY, .boxName = "ANTI GRAVITY", .permanentId = 4 },
-    { .boxId = BOXMAG, .boxName = "MAG", .permanentId = 5 },
-    { .boxId = BOXHEADFREE, .boxName = "HEADFREE", .permanentId = 6 },
-    { .boxId = BOXHEADADJ, .boxName = "HEADADJ", .permanentId = 7 },
-    { .boxId = BOXCAMSTAB, .boxName = "CAMSTAB", .permanentId = 8 },
-//    { .boxId = BOXCAMTRIG, .boxName = "CAMTRIG", .permanentId = 9 },
-//    { .boxId = BOXGPSHOME, .boxName = "GPS HOME", .permanentId = 10 },
-//    { .boxId = BOXGPSHOLD, .boxName = "GPS HOLD", .permanentId = 11 },
-{ .boxId = BOXPOSHOLD, .boxName = "POS HOLD",   .permanentId = 11 }, // POSITION HOLD
-    { .boxId = BOXPASSTHRU, .boxName = "PASSTHRU", .permanentId = 12 },
-    { .boxId = BOXBEEPERON, .boxName = "BEEPER", .permanentId = 13 },
-//    { .boxId = BOXLEDMAX, .boxName = "LEDMAX", .permanentId = 14 }, (removed)
-    { .boxId = BOXLEDLOW, .boxName = "LEDLOW", .permanentId = 15 },
-//    { .boxId = BOXLLIGHTS, .boxName = "LLIGHTS", .permanentId = 16 }, (removed)
-    { .boxId = BOXCALIB, .boxName = "CALIB", .permanentId = 17 },
-//    { .boxId = BOXGOV, .boxName = "GOVERNOR", .permanentId = 18 }, (removed)
-    { .boxId = BOXOSD, .boxName = "OSD DISABLE", .permanentId = 19 },
-    { .boxId = BOXTELEMETRY, .boxName = "TELEMETRY", .permanentId = 20 },
-//    { .boxId = BOXGTUNE, .boxName = "GTUNE", .permanentId = 21 }, (removed)
-//    { .boxId = BOXRANGEFINDER, .boxName = "RANGEFINDER", .permanentId = 22 }, (removed)
-    { .boxId = BOXSERVO1, .boxName = "SERVO1", .permanentId = 23 },
-    { .boxId = BOXSERVO2, .boxName = "SERVO2", .permanentId = 24 },
-    { .boxId = BOXSERVO3, .boxName = "SERVO3", .permanentId = 25 },
-    { .boxId = BOXBLACKBOX, .boxName = "BLACKBOX", .permanentId = 26 },
-    { .boxId = BOXFAILSAFE, .boxName = "FAILSAFE", .permanentId = 27 },
-    { .boxId = BOXAIRMODE, .boxName = "AIR MODE", .permanentId = 28 },
-    { .boxId = BOX3D, .boxName = "3D DISABLE / SWITCH", .permanentId = 29},
-    { .boxId = BOXFPVANGLEMIX, .boxName = "FPV ANGLE MIX", .permanentId = 30},
-    { .boxId = BOXBLACKBOXERASE, .boxName = "BLACKBOX ERASE", .permanentId = 31 },
-    { .boxId = BOXCAMERA1, .boxName = "CAMERA CONTROL 1", .permanentId = 32},
-    { .boxId = BOXCAMERA2, .boxName = "CAMERA CONTROL 2", .permanentId = 33},
-    { .boxId = BOXCAMERA3, .boxName = "CAMERA CONTROL 3", .permanentId = 34 },
-    { .boxId = BOXFLIPOVERAFTERCRASH, .boxName = "FLIP OVER AFTER CRASH", .permanentId = 35 },
-    { .boxId = BOXPREARM, .boxName = "PREARM", .permanentId = 36 },
-    { .boxId = BOXBEEPGPSCOUNT, .boxName = "GPS BEEP SATELLITE COUNT", .permanentId = 37 },
-//    { .boxId = BOX3DONASWITCH, .boxName = "3D ON A SWITCH", .permanentId = 38 }, (removed)
-    { .boxId = BOXVTXPITMODE, .boxName = "VTX PIT MODE", .permanentId = 39 },
-    { .boxId = BOXUSER1, .boxName = "USER1", .permanentId = 40 },
-    { .boxId = BOXUSER2, .boxName = "USER2", .permanentId = 41 },
-    { .boxId = BOXUSER3, .boxName = "USER3", .permanentId = 42 },
-    { .boxId = BOXUSER4, .boxName = "USER4", .permanentId = 43 },
-    { .boxId = BOXPIDAUDIO, .boxName = "PID AUDIO", .permanentId = 44 },
-    { .boxId = BOXPARALYZE, .boxName = "PARALYZE", .permanentId = 45 },
-    { .boxId = BOXGPSRESCUE, .boxName = "GPS RESCUE", .permanentId = 46 },
-    { .boxId = BOXACROTRAINER, .boxName = "ACRO TRAINER", .permanentId = 47 },
-    { .boxId = BOXVTXCONTROLDISABLE, .boxName = "VTX CONTROL DISABLE", .permanentId = 48},
-    { .boxId = BOXLAUNCHCONTROL, .boxName = "LAUNCH CONTROL", .permanentId = 49 },
-    { .boxId = BOXMSPOVERRIDE, .boxName = "MSP OVERRIDE", .permanentId = 50},
-    { .boxId = BOXSTICKCOMMANDDISABLE, .boxName = "STICK COMMANDS DISABLE", .permanentId = 51},
-    { .boxId = BOXBEEPERMUTE, .boxName = "BEEPER MUTE", .permanentId = 52},
-    { .boxId = BOXREADY, .boxName = "READY", .permanentId = 53},
-    { .boxId = BOXLAPTIMERRESET, .boxName = "LAP TIMER RESET", .permanentId = 54},
+    {.boxId = BOXARM, .boxName = "ARM", .permanentId = 0 },
+    {.boxId = BOXANGLE, .boxName = "ANGLE", .permanentId = 1 },
+    {.boxId = BOXHORIZON, .boxName = "HORIZON", .permanentId = 2 },
+    //    { .boxId = BOXBARO, .boxName = "BARO", .permanentId = 3 },
+    {.boxId = BOXALTHOLD, .boxName = "ALT HOLD",   .permanentId = 3 },  // ALTITUDE HOLD
+        {.boxId = BOXANTIGRAVITY, .boxName = "ANTI GRAVITY", .permanentId = 4 },
+        {.boxId = BOXMAG, .boxName = "MAG", .permanentId = 5 },
+        {.boxId = BOXHEADFREE, .boxName = "HEADFREE", .permanentId = 6 },
+        {.boxId = BOXHEADADJ, .boxName = "HEADADJ", .permanentId = 7 },
+        {.boxId = BOXCAMSTAB, .boxName = "CAMSTAB", .permanentId = 8 },
+        //    { .boxId = BOXCAMTRIG, .boxName = "CAMTRIG", .permanentId = 9 },
+        //    { .boxId = BOXGPSHOME, .boxName = "GPS HOME", .permanentId = 10 },
+        //    { .boxId = BOXGPSHOLD, .boxName = "GPS HOLD", .permanentId = 11 },
+        {.boxId = BOXPOSHOLD, .boxName = "POS HOLD",   .permanentId = 11 }, // POSITION HOLD
+            {.boxId = BOXPASSTHRU, .boxName = "PASSTHRU", .permanentId = 12 },
+            {.boxId = BOXBEEPERON, .boxName = "BEEPER", .permanentId = 13 },
+            //    { .boxId = BOXLEDMAX, .boxName = "LEDMAX", .permanentId = 14 }, (removed)
+                {.boxId = BOXLEDLOW, .boxName = "LEDLOW", .permanentId = 15 },
+                //    { .boxId = BOXLLIGHTS, .boxName = "LLIGHTS", .permanentId = 16 }, (removed)
+                    {.boxId = BOXCALIB, .boxName = "CALIB", .permanentId = 17 },
+                    //    { .boxId = BOXGOV, .boxName = "GOVERNOR", .permanentId = 18 }, (removed)
+                        {.boxId = BOXOSD, .boxName = "OSD DISABLE", .permanentId = 19 },
+                        {.boxId = BOXTELEMETRY, .boxName = "TELEMETRY", .permanentId = 20 },
+                        //    { .boxId = BOXGTUNE, .boxName = "GTUNE", .permanentId = 21 }, (removed)
+                        //    { .boxId = BOXRANGEFINDER, .boxName = "RANGEFINDER", .permanentId = 22 }, (removed)
+                            {.boxId = BOXSERVO1, .boxName = "SERVO1", .permanentId = 23 },
+                            {.boxId = BOXSERVO2, .boxName = "SERVO2", .permanentId = 24 },
+                            {.boxId = BOXSERVO3, .boxName = "SERVO3", .permanentId = 25 },
+                            {.boxId = BOXBLACKBOX, .boxName = "BLACKBOX", .permanentId = 26 },
+                            {.boxId = BOXFAILSAFE, .boxName = "FAILSAFE", .permanentId = 27 },
+                            {.boxId = BOXAIRMODE, .boxName = "AIR MODE", .permanentId = 28 },
+                            {.boxId = BOX3D, .boxName = "3D DISABLE / SWITCH", .permanentId = 29},
+                            {.boxId = BOXFPVANGLEMIX, .boxName = "FPV ANGLE MIX", .permanentId = 30},
+                            {.boxId = BOXBLACKBOXERASE, .boxName = "BLACKBOX ERASE", .permanentId = 31 },
+                            {.boxId = BOXCAMERA1, .boxName = "CAMERA CONTROL 1", .permanentId = 32},
+                            {.boxId = BOXCAMERA2, .boxName = "CAMERA CONTROL 2", .permanentId = 33},
+                            {.boxId = BOXCAMERA3, .boxName = "CAMERA CONTROL 3", .permanentId = 34 },
+                            {.boxId = BOXFLIPOVERAFTERCRASH, .boxName = "FLIP OVER AFTER CRASH", .permanentId = 35 },
+                            {.boxId = BOXPREARM, .boxName = "PREARM", .permanentId = 36 },
+                            {.boxId = BOXBEEPGPSCOUNT, .boxName = "GPS BEEP SATELLITE COUNT", .permanentId = 37 },
+                            //    { .boxId = BOX3DONASWITCH, .boxName = "3D ON A SWITCH", .permanentId = 38 }, (removed)
+                                {.boxId = BOXVTXPITMODE, .boxName = "VTX PIT MODE", .permanentId = 39 },
+                                {.boxId = BOXUSER1, .boxName = "USER1", .permanentId = 40 },
+                                {.boxId = BOXUSER2, .boxName = "USER2", .permanentId = 41 },
+                                {.boxId = BOXUSER3, .boxName = "USER3", .permanentId = 42 },
+                                {.boxId = BOXUSER4, .boxName = "USER4", .permanentId = 43 },
+                                {.boxId = BOXPIDAUDIO, .boxName = "PID AUDIO", .permanentId = 44 },
+                                {.boxId = BOXPARALYZE, .boxName = "PARALYZE", .permanentId = 45 },
+                                {.boxId = BOXGPSRESCUE, .boxName = "GPS RESCUE", .permanentId = 46 },
+                                {.boxId = BOXACROTRAINER, .boxName = "ACRO TRAINER", .permanentId = 47 },
+                                {.boxId = BOXVTXCONTROLDISABLE, .boxName = "VTX CONTROL DISABLE", .permanentId = 48},
+                                {.boxId = BOXLAUNCHCONTROL, .boxName = "LAUNCH CONTROL", .permanentId = 49 },
+                                {.boxId = BOXMSPOVERRIDE, .boxName = "MSP OVERRIDE", .permanentId = 50},
+                                {.boxId = BOXSTICKCOMMANDDISABLE, .boxName = "STICK COMMANDS DISABLE", .permanentId = 51},
+                                {.boxId = BOXBEEPERMUTE, .boxName = "BEEPER MUTE", .permanentId = 52},
+                                {.boxId = BOXREADY, .boxName = "READY", .permanentId = 53},
+                                {.boxId = BOXLAPTIMERRESET, .boxName = "LAP TIMER RESET", .permanentId = 54},
 };
 
 // mask of enabled IDs, calculated on startup based on enabled features. boxId_e is used as bit index
 
 static boxBitmask_t activeBoxIds;
 
-const box_t *findBoxByBoxId(boxId_e boxId)
+const box_t* findBoxByBoxId(boxId_e boxId)
 {
     for (unsigned i = 0; i < ARRAYLEN(boxes); i++) {
-        const box_t *candidate = &boxes[i];
+        const box_t* candidate = &boxes[i];
         if (candidate->boxId == boxId)
             return candidate;
     }
     return NULL;
 }
 
-const box_t *findBoxByPermanentId(uint8_t permanentId)
+const box_t* findBoxByPermanentId(uint8_t permanentId)
 {
     for (unsigned i = 0; i < ARRAYLEN(boxes); i++) {
-        const box_t *candidate = &boxes[i];
+        const box_t* candidate = &boxes[i];
         if (candidate->permanentId == permanentId)
             return candidate;
     }
@@ -139,18 +139,22 @@ static bool activeBoxIdGet(boxId_e boxId)
     return bitArrayGet(&activeBoxIds, boxId);
 }
 
-void serializeBoxNameFn(sbuf_t *dst, const box_t *box)
+void serializeBoxNameFn(sbuf_t* dst, const box_t* box)
 {
 #if defined(USE_CUSTOM_BOX_NAMES)
     if (box->boxId == BOXUSER1 && strlen(modeActivationConfig()->box_user_1_name) > 0) {
         sbufWriteString(dst, modeActivationConfig()->box_user_1_name);
-    } else if (box->boxId == BOXUSER2 && strlen(modeActivationConfig()->box_user_2_name) > 0) {
+    }
+    else if (box->boxId == BOXUSER2 && strlen(modeActivationConfig()->box_user_2_name) > 0) {
         sbufWriteString(dst, modeActivationConfig()->box_user_2_name);
-    } else if (box->boxId == BOXUSER3 && strlen(modeActivationConfig()->box_user_3_name) > 0) {
+    }
+    else if (box->boxId == BOXUSER3 && strlen(modeActivationConfig()->box_user_3_name) > 0) {
         sbufWriteString(dst, modeActivationConfig()->box_user_3_name);
-    } else if (box->boxId == BOXUSER4 && strlen(modeActivationConfig()->box_user_4_name) > 0) {
+    }
+    else if (box->boxId == BOXUSER4 && strlen(modeActivationConfig()->box_user_4_name) > 0) {
         sbufWriteString(dst, modeActivationConfig()->box_user_4_name);
-    } else
+    }
+    else
 #endif
     {
         sbufWriteString(dst, box->boxName);
@@ -158,14 +162,14 @@ void serializeBoxNameFn(sbuf_t *dst, const box_t *box)
     sbufWriteU8(dst, ';');
 }
 
-void serializeBoxPermanentIdFn(sbuf_t *dst, const box_t *box)
+void serializeBoxPermanentIdFn(sbuf_t* dst, const box_t* box)
 {
     sbufWriteU8(dst, box->permanentId);
 }
 
 // serialize 'page' of boxNames.
 // Each page contains at most 32 boxes
-void serializeBoxReply(sbuf_t *dst, int page, serializeBoxFn *serializeBox)
+void serializeBoxReply(sbuf_t* dst, int page, serializeBoxFn* serializeBox)
 {
     unsigned boxIdx = 0;
     unsigned pageStart = page * 32;
@@ -224,6 +228,12 @@ void initActiveBoxIds(void)
     }
 #endif
 
+#ifdef USE_BARO //Кастомний режим
+    if (sensors(SENSOR_BARO)) {
+        BME(BOXALTHOLD);
+    }
+#endif
+
 #ifdef USE_GPS
     if (featureIsEnabled(FEATURE_GPS)) {
 #ifdef USE_GPS_RESCUE
@@ -231,6 +241,7 @@ void initActiveBoxIds(void)
             BME(BOXGPSRESCUE);
         }
 #endif
+        BME(BOXPOSHOLD);//Кастомний режим
         BME(BOXBEEPGPSCOUNT);
     }
 #endif
@@ -307,9 +318,9 @@ void initActiveBoxIds(void)
     // Note that pinioBoxConfig can be set to monitor any box.
     for (int i = 0; i < PINIO_COUNT; i++) {
         if (pinioBoxConfig()->permanentId[i] != PERMANENT_ID_NONE) {
-            const box_t *box = findBoxByPermanentId(pinioBoxConfig()->permanentId[i]);
+            const box_t* box = findBoxByPermanentId(pinioBoxConfig()->permanentId[i]);
             if (box) {
-                switch(box->boxId) {
+                switch (box->boxId) {
                 case BOXUSER1:
                 case BOXUSER2:
                 case BOXUSER3:
@@ -347,7 +358,7 @@ void initActiveBoxIds(void)
 
 #undef BME
     // check that all enabled IDs are in boxes array (check may be skipped when using findBoxById() functions)
-    for (boxId_e boxId = 0;  boxId < CHECKBOX_ITEM_COUNT; boxId++)
+    for (boxId_e boxId = 0; boxId < CHECKBOX_ITEM_COUNT; boxId++)
         if (bitArrayGet(&ena, boxId)
             && findBoxByBoxId(boxId) == NULL)
             bitArrayClr(&ena, boxId);                 // this should not happen, but handle it gracefully
@@ -365,16 +376,18 @@ bool getBoxIdState(boxId_e boxid)
 
     if (boxid == BOXARM) {
         return ARMING_FLAG(ARMED);
-    } else if (boxid <= BOXID_FLIGHTMODE_LAST) {
+    }
+    else if (boxid <= BOXID_FLIGHTMODE_LAST) {
         return FLIGHT_MODE(1 << boxIdToFlightModeMap[boxid]);
-    } else {
+    }
+    else {
         return IS_RC_MODE_ACTIVE(boxid);
     }
 }
 
 // pack used flightModeFlags into supplied array
 // returns number of bits used
-int packFlightModeFlags(boxBitmask_t *mspFlightModeFlags)
+int packFlightModeFlags(boxBitmask_t* mspFlightModeFlags)
 {
     // Serialize the flags in the order we delivered them, ignoring BOXNAMES and BOXINDEXES
     memset(mspFlightModeFlags, 0, sizeof(boxBitmask_t));
