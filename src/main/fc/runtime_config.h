@@ -81,9 +81,8 @@ typedef enum {
     ANGLE_MODE = (1 << 0),
     HORIZON_MODE = (1 << 1),
     MAG_MODE = (1 << 2),
-    ALT_HOLD_MODE = (1 << 3),   // Altitude Hold (режим утримання висоти)
-    POS_HOLD_MODE = (1 << 5),   // Position Hold (режим утримання позиції)
-
+    ALT_HOLD_MODE = (1 << 3),   // Altitude Hold mode (uses old BARO bit)
+    POS_HOLD_MODE = (1 << 4),   // Position Hold mode (uses old GPS hold bit)
     //    BARO_MODE       = (1 << 3),
     //    GPS_HOME_MODE   = (1 << 4),
     //    GPS_HOLD_MODE   = (1 << 5),
@@ -107,8 +106,8 @@ extern uint16_t flightModeFlags;
    [BOXANGLE]       = LOG2(ANGLE_MODE),                  \
    [BOXHORIZON]     = LOG2(HORIZON_MODE),                \
    [BOXMAG]         = LOG2(MAG_MODE),                    \
-   [BOXALTHOLD]     = LOG2(ALT_HOLD_MODE),               \
-   [BOXPOSHOLD]     = LOG2(POS_HOLD_MODE),               \
+   [BOXALTHOLD]  = LOG2(ALT_HOLD_MODE),
+[BOXPOSHOLD] = LOG2(POS_HOLD_MODE),
    [BOXHEADFREE]    = LOG2(HEADFREE_MODE),               \
    [BOXPASSTHRU]    = LOG2(PASSTHRU_MODE),               \
    [BOXFAILSAFE]    = LOG2(FAILSAFE_MODE),               \
